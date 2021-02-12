@@ -1,2 +1,2 @@
 # Wireless-and-Mobile-Computing
-Homework Mobile App Submission
+Mobile App Homework Submission
