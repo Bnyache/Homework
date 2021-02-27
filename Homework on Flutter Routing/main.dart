@@ -28,7 +28,7 @@ void main() {
     ) ,
   ) ) ;
 }
-class HotelsScreen extends StatelessWidget {    //Hotel List
+class HotelsScreen extends StatelessWidget {                                                                          //1. Main Page list of hotel
   final List<Hotel> hotels;
   HotelsScreen({Key key, @required this.hotels}) : super(key: key);
   int _counter = 0;
@@ -78,7 +78,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
                 Navigator.push(
                 context,
                   MaterialPageRoute(
-                    builder: (context) => DetailScreen(hotel: hotels[1]),
+                    builder: (context) => DetailScreen(hotel: hotels[1]),                                   //2. User can select one -> show detail screen
                   ),
                 );
             },
@@ -110,7 +110,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                                   //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -142,7 +142,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                               //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -174,7 +174,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                           //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -192,7 +192,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
             ),
             title: Text('The Siam, Bangkok'),
             subtitle: Text('Riverview Suite  \nPrice: \฿20,000'),
-            trailing: Icon(Icons.add_circle),
+            trailing: Icon(Icons.add_circle),                                                 
             onTap: () {
               print('The Siam Hotel');
               _counter++;
@@ -206,7 +206,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                       //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -238,7 +238,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                            //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -270,7 +270,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                           //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -302,7 +302,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                          //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -334,7 +334,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                           //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -366,7 +366,7 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                              //2. User can select one -> show detail screen
                 ),
               );
             },
@@ -398,14 +398,14 @@ class HotelsScreen extends StatelessWidget {    //Hotel List
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(hotel: hotels[1]),
-                ),
+                  builder: (context) => DetailScreen(hotel: hotels[1]),                             //2. User can select one -> show detail screen
+                ),    
               );
             },
           ),
         ],
       ),
-      bottomNavigationBar: _buildTotalContainer(),        //Your Booking Button Link to Summary Page
+      bottomNavigationBar: _buildTotalContainer(),        //Your Booking Button Link to Summary Page(quotation screen)
     ) ;
   }
 
@@ -462,8 +462,8 @@ class BookButton extends StatelessWidget {
   // Navigator.push returns a Future that completes after calling
   // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SummaryPage()),
-                   ) ;
+                        MaterialPageRoute(builder: (context) => SummaryPage()),                //5. After done, show quotation screen.
+                   ) ;                                                                         //4.User can select many hotel from main screen or in summary page
   }
 }
 
@@ -529,8 +529,9 @@ class SelectionButton extends StatelessWidget {
       .. showSnackBar(SnackBar(content: Text("$result")));
   }
 }
-class SelectionScreen extends StatelessWidget {
-  @override
+
+class SelectionScreen extends StatelessWidget {                                                            //To Confirm Booking Yes or No
+  @override                                                                                                //3. Show Yes or No to buy that items
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
